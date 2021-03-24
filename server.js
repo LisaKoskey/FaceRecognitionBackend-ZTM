@@ -31,6 +31,6 @@ app.get('/profile/:id',(req,res)=>{routeProfile.handleProfile()})
 app.put('/image',(req,res)=>{routeImage.handleImage(req,res,db);console.log('atrouteImage')})
 app.post('/imageURL',(req,res)=>{routeImage.handleClarifaiAPI(req,res);console.log('atClarifaiAPI')})
 
-app.listen(3000,()=>{
-    console.log('server is listening on port 3000')
+app.listen(process.env.PORT||3000,()=>{
+    console.log('server is listening on port ${process.env.PORT}')
 }) 
